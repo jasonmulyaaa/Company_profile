@@ -16,6 +16,9 @@
             </div>
           </div>
         </div>
+        <br>
+        <br>
+        <br>
         <img class="u-image u-image-default u-image-1" src="../../assets/user/images/gedung.jpeg" alt="" data-image-width="720" data-image-height="1080">
       </div>
       @endforeach

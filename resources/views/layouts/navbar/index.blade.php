@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="../../../../assets/vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="../../../../assets/vendors/typicons/typicons.css">
   <link rel="stylesheet" href="../../../../assets/vendors/simple-line-icons/css/simple-line-icons.css">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+   {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  --}}
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <!-- End plugin css for this page -->
@@ -100,45 +100,70 @@ background-color: #ffffff !important
 }</style>
     
     
-    <footer class="main-footer" style="background-color: #EEEEEE;">
-    <div class="row g-4 " >
-      <div class="col-md-6">
-        <img src="{{ asset('storage/' . $konfigurasi->favicon) }}" alt="No Image" width="150" height="150" style="margin-top: 50px; margin-left: 100px;"> <br> <br>
-        <p style="padding-left: 100px;">JM Solution merupakan Agensi profesional yang bergerak dibidang Jasa IT.</p>
+    <footer class="u-clearfix u-footer u-grey-80" id="sec-8ae1"><div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+        <div class="u-gutter-0 u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-center-sm u-align-center-xs u-align-left-md u-align-left-xl u-container-style u-layout-cell u-left-cell u-size-20 u-size-20-md u-layout-cell-1">
+              <div class="u-container-layout u-valign-middle u-container-layout-1"><!--position-->
+                <div data-position="" class="u-position u-position-1"><!--block-->
+                  <div class="u-block">
+                    <div class="u-block-container u-clearfix"><!--block_header-->
+                      <h5 class="u-block-header u-text"><!--block_header_content--> JM Solution <!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                      <div class="u-block-content u-text"><!--block_content_content--> JM Solution merupakan Agensi profesional yang bergerak dibidang Jasa IT. <!--/block_content_content--></div><!--/block_content-->
+                    </div>
+                  </div><!--/block-->
+                </div><!--/position-->
+              </div>
+            </div>
+            <div class="u-align-center-sm u-align-right-md u-container-style u-layout-cell u-size-20 u-size-20-md u-layout-cell-2">
+              <div class="u-container-layout u-valign-middle u-container-layout-2">
+                <a href="https://nicepage.com" class="u-image u-logo u-image-1"  width="150" height="150">
+                  <img src="{{ asset('storage/' . $konfigurasi->favicon) }}" class="u-logo-image u-logo-image-1">
+                </a>
+              </div>
+            </div>
+            <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-layout-cell u-right-cell u-size-20 u-size-20-md u-layout-cell-3">
+              <div class="u-container-layout u-valign-top u-container-layout-3">
+                <h4 class="u-text u-text-3">Akses Cepat</h4>
+                <ul class="u-custom-list u-spacing-5 u-text u-text-default u-text-4">
+                  <li>
+                    <div class="u-list-icon">
+                      <div>►</div>
+                    </div><a class="nav-link" href="/" style="color: white">Home</a>
+                  </li>
+                  <li>
+                    <div class="u-list-icon">
+                      <div>►</div>
+                    </div><a class="nav-link" href="/about" style="color: white">About Us</a>
+                  </li>
+                  <li>
+                    <div class="u-list-icon">
+                      <div>►</div>
+                    </div><a class="nav-link" href="/services" style="color: white">Service</a>
+                  </li>
+                  <li>
+                    <div class="u-list-icon">
+                      <div>►</div>
+                    </div><a class="nav-link" href="/galleries" style="color: white">Gallery</a>
+                  </li>
+                  <li>
+                    <div class="u-list-icon">
+                      <div>►</div>
+                    </div><a class="nav-link" href="/testimonials" style="color: white">Testimonial</a>
+                  </li>
+                  <li>
+                    <div class="u-list-icon">
+                      <div>►</div>
+                    </div><a class="nav-link" href="/blogs" style="color: white">Blog</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-md-3">
-        <h3>Akses Cepat</h3>
-        <ul style="list-style-type: none;">
-          <li >
-            <a class="nav-link" href="/" style="color: black">Home</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/about" style="color: black">About Us</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/services" style="color: black">Service</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/galleries" style="color: black">Gallery</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/testimonials" style="color: black">Testimonial</a>
-          </li>
-          <li>
-            <a class="nav-link" href="/blogs" style="color: black">Blog</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <h3>Address</h3>
-
-        <p>CQCH+VMQ, Jl. Terapi Raya, RT.03/RW.19, Menteng, Kec. Bogor Bar., Kota Bogor, Jawa Barat 16111</p>
-        <p><i class="fa-solid fa-phone"></i>082111543486</p>
-        <p><i class="fa-solid fa-envelope"></i>jasonmulya@gmail.com</p>
-
-      </div>
-    </div>
-  </footer>
+    </div></footer>
 
       
       <span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px; padding: 15px;" class="u-back-to-top u-icon u-icon-circle u-opacity u-opacity-85 u-palette-1-base" data-href="#">

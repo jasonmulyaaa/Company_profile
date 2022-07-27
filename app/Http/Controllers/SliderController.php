@@ -14,15 +14,15 @@ class SliderController extends Controller
      */
     public function index(Request $request)
     {
-        $slider = Slider::latest()->paginate(5);
+        $sliders = Slider::latest()->paginate(5);
 
-        $slider = Slider::when($request->search, function ($query) use ($request) {
+        $sliders = Slider::when($request->search, function ($query) use ($request) {
             $query->where('judul', 'like', "%{$request->search}%");;
         })->orderBy('created_at', 'desc')->paginate(5);
 
-        $slider->appends($request->only('search'));
+        $sliders->appends($request->only('search'));
 
-        return view('slider.index', compact('slider'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('slider.index', compact('sliders'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

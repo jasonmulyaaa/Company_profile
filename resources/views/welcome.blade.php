@@ -39,7 +39,7 @@
       </a>
     </section>
 
-    <section class="u-align-left u-clearfix  u-section-2" id="carousel_745a">
+    <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_745a">
       <div class="u-clearfix u-sheet u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         <h3 class="u-custom-font u-font-montserrat u-text u-text-1"> Tentang Perusahaan</h3>
         <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
@@ -59,7 +59,7 @@
       </div>
       @endforeach
     </section>
-    <section class="u-align-center u-clearfix  u-section-8" id="sec-a258">
+    <section class="u-align-center u-clearfix u-grey-5 u-section-8" id="sec-a258">
       @foreach ($kmk as $kmk)
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h1 class="u-text u-text-default u-text-2">Kenapa Memilih Kami</h1>
@@ -67,7 +67,7 @@
       </div>
       @endforeach
     </section>
-    <section class="u-align-left u-clearfix u-section-3" id="carousel_2d42">
+    <section class="u-align-left u-clearfix u-grey-5 u-section-3" id="carousel_2d42">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1">Service</h2>
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">

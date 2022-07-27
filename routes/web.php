@@ -23,6 +23,7 @@ use App\Http\Controllers\TestimonialUserController;
 use App\Http\Controllers\BlogUserController;
 use App\Http\Controllers\FormContactUsUserController;
 use App\Http\Controllers\KonfigurasiUserController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -40,9 +41,7 @@ Route::get('/', function () {
     return view('/');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authentication'])->name('authentication');

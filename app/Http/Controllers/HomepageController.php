@@ -12,6 +12,7 @@ use App\Models\Testimonial;
 use App\Models\Blog;
 use App\Models\Konfigurasi;
 use App\Models\Contactus;
+use App\Models\Visit;
 
 class HomepageController extends Controller
 {
@@ -31,6 +32,15 @@ class HomepageController extends Controller
         $blog = Blog::limit(6)->latest()->get();
         $konfigurasi = Konfigurasi::all();
         $contactus = Contactus::all();
+
+        $totalvisit = $_SERVER['REMOTE_ADDR'];
+
+        $validated = [
+            'visit_count' => $totalvisit,
+            'visit_date' => date('Y-m-d'),
+        ];
+
+        Visit::create($validated);
 
         return view('welcome', compact('slider', 'aboutus', 'kmk', 'service', 'gallery', 'testimonial', 'blog', 'konfigurasi', 'contactus'));
     }

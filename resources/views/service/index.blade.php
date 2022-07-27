@@ -11,65 +11,103 @@
                 <div class="card-body">
                   <h4 class="card-title">Service Table</h4>
                   <div class="table-responsive">
-                    @if ($message = Session::get('success'))
-    <div class="alert alert-success">
-        <p>{{ $message }}</p>
-    </div>
-@endif
-                    <table class="table table-striped">
-                      <div class="col-md-4">
-                        <form action="{{ url()->current() }}" autocomplete="off" method="get">
-                            <div class="input-group ">
-                                <input type="text" class="form-control" placeholder="Search" name="search">
-                                <button class=" btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
-                            </div>
-                        </form>
-                       </div>
-                      <thead>
-                        <tr>
-                        <th>
-                          <input type="checkbox" id="chkCheckAll" />
-                        </th>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Tables</button>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Add</button>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><table class="table table-striped">
+                        <div class="col-md-4">
+                          <form action="{{ url()->current() }}" autocomplete="off" method="get">
+                              <div class="input-group ">
+                                  <input type="text" class="form-control" placeholder="Search" name="search">
+                                  <button class=" btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                              </div>
+                          </form>
+                         </div>
+                        <thead>
+                          <tr>
                           <th>
-                            Katalog
+                            <input type="checkbox" id="chkCheckAll" />
                           </th>
-                          <th>
-                            Action
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      @foreach ($services as $service)
-                        <tr>
-                        <td>
-                          <input type="checkbox" name="ids" class="checkBoxClass" value="{{ $service->id }}" />
-                        </td>
-                          <td class="py-1">
-                          {{ $service->katalog}}
-                          </td>
+                            <th>
+                              Katalog
+                            </th>
+                            <th>
+                              Action
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($services as $service)
+                          <tr>
                           <td>
-                          <form action="{{ route('service.destroy', $service->id) }}" method="POST">
-
-                          <a class="btn rounded-pill btn-warning" href="{{ route('service.edit', $service->id) }}">Edit</a>
-
-                          @csrf
-                          @method('DELETE')
-
-                          <button type="submit" class="btn rounded-pill btn-danger">Delete</button>
-                        </form>
+                            <input type="checkbox" name="ids" class="checkBoxClass" value="{{ $service->id }}" />
                           </td>
-                        </tr>
-                      </tbody>
-                      @endforeach
-                    </table>
-                    {!! $services->links() !!}
+                            <td class="py-1">
+                            {{ $service->katalog}}
+                            </td>
+                            <td>
+                            <form action="{{ route('service.destroy', $service->id) }}" method="POST">
+  
+                            <a class="btn rounded-pill btn-warning" href="{{ route('service.edit', $service->id) }}">Edit</a>
+  
+                            @csrf
+                            @method('DELETE')
+  
+                            <button type="submit" class="btn rounded-pill btn-danger">Delete</button>
+                          </form>
+                            </td>
+                          </tr>
+                        </tbody>
+                        @endforeach
+                      </table>
+                      {!! $services->links() !!}
+                      <br>
+                      <div class="pull-right">
+                        <a href="#" class="btn btn-danger" id="deleteAllSelectedService" onclick="location.reload()">Delete Selected</a>
+                    </div>
+                  </div>
+                      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">@if ($errors->any())
+                        <div class="alert alert-danger">
+                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                <form action="{{ route('service.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                            <div class="col-12 grid-margin stretch-card">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h4 class="card-title">Form Service</h4>
+                                  <p class="card-description">
+                                    Isi Form Service
+                                  </p>
+                                  <form class="forms-sample">
+                                    <div class="form-group">
+                                      <label for="exampleInputName1">Katalog</label>
+                                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Katalog" name="katalog">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                </form>
+              </div>
+                    </div>
+                    
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('service.create') }}"> +</a>
-                <a href="#" class="btn btn-danger" id="deleteAllSelectedService" onclick="location.reload()">Delete Selected</a>
             </div>
                 
                   

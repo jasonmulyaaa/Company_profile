@@ -23,7 +23,7 @@ class BlogUserController extends Controller
 
         $blogss = Blog::when($request->search, function ($query) use ($request) {
             $query->where('judul', 'like', "%{$request->search}%");;
-        })->orderBy('created_at', 'desc')->paginate(5);
+        })->orderBy('created_at', 'desc')->paginate(6);
 
         $blogss->appends($request->only('search'));
 

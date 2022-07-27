@@ -16,14 +16,14 @@ class GalleryController extends Controller
     public function index(Request $request)
     {
         $gallerys = Gallery::latest()->paginate(5);
-
+        $kategorigallery = Kategorigallery::all();
         $gallerys = Gallery::when($request->search, function ($query) use ($request) {
             $query->where('judul', 'like', "%{$request->search}%");;
         })->orderBy('created_at', 'desc')->paginate(5);
 
         $gallerys->appends($request->only('search'));
 
-        return view('gallery.index', compact('gallerys'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('gallery.index', compact('gallerys', 'kategorigallery', $kategorigallery))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

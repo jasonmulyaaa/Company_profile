@@ -16,6 +16,7 @@ class BlogController extends Controller
     public function index(Request $request)
     {
         $blogs = Blog::latest()->paginate(5);
+        $kategoriblog = Kategoriblog::all();
 
         $blogs = Blog::when($request->search, function ($query) use ($request) {
             $query->where('judul', 'like', "%{$request->search}%");;
@@ -23,7 +24,7 @@ class BlogController extends Controller
 
         $blogs->appends($request->only('search'));
 
-        return view('blog.index', compact('blogs'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('blog.index', compact('blogs', 'kategoriblog', $kategoriblog))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

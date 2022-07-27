@@ -1,9 +1,12 @@
 @extends('layouts.navbar.index')
 @section('content')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+
 <br>
 <br>
 <section class="u-align-center u-clearfix u-section-4" id="carousel_e0fa" syle="">
       <div class="u-clearfix u-sheet u-sheet-1"><!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
+        <br>
       <h1 class="u-custom-font u-font-montserrat u-text u-text-1">Blog Terbaru</h1>
         <div class="u-blog u-expanded-width u-blog-1">
           <div class="col-md-4">
